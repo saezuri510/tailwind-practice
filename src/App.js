@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+
+import Gaming from "./components/Gaming";
+import Home from "./components/Home";
+import Learning from "./components/Learning";
+import Live from "./components/Live";
+import Movies from "./components/Movies";
+import Music from "./components/Music";
+import News from "./components/News";
+import Sports from "./components/Sports";
+import Trending from "./components/Trending";
+
+import Navbar from "./components/Navbar";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Navbar />
+            <div className="flex justify-center items-center w-screen h-screen">
+                <div className="w-11/12 h-5/6 md:w-9/12">
+                    <Routes>
+                        <Route path={`/`} element={<Home />} />
+                        <Route path={`/gaming`} element={<Gaming />} />
+                        <Route path={`/learning`} element={<Learning />} />
+                        <Route path={`/live`} element={<Live />} />
+                        <Route path={`/movies`} element={<Movies />} />
+                        <Route path={`/music`} element={<Music />} />
+                        <Route path={`/news`} element={<News />} />
+                        <Route path={`/sports`} element={<Sports />} />
+                        <Route path={`/trending`} element={<Trending />} />
+                    </Routes>
+                </div>
+            </div>
+        </>
+    );
 }
 
 export default App;
